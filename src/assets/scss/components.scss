@@ -1,0 +1,528 @@
+// upgrade buttons
+.blog-upgrade {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+
+  .remain-btn,
+  .upgrade-btn {
+    width: 100%;
+    text-transform: capitalize;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer !important;
+    font-family: $interBoldFont !important;
+
+    svg {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+
+  .remain-btn {
+    background-color: $offWhite !important;
+    border: 1px solid $lightGrey !important;
+    color: $black !important;
+  }
+
+  .upgrade-btn {
+    background-color: $lightBlack !important;
+    color: $white !important;
+  }
+}
+
+// ant-divider
+.ant-divider {
+  color: $gray !important;
+  margin: 15px 0 !important;
+
+  span {
+    @extend .text-18;
+    color: $gray;
+    font-family: $interRegularFont;
+  }
+}
+
+// input box css
+.ant-input {
+  background: #fff !important;
+  border: 1px solid #e2e4e8 !important;
+  @extend .text-14;
+  display: flex;
+  height: 42px;
+  width: 100%;
+  padding: 10px 12px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  margin: 0px;
+  // border: none;
+  outline: none;
+  color: $lightBlack;
+  font-family: $interMediumFont;
+
+  &:hover {
+    border: 1px solid #777777 !important;
+  }
+
+  &:focus {
+    border: 1px solid $primary !important;
+  }
+
+  &::placeholder {
+    font-family: $interRegularFont;
+    color: $gray;
+  }
+}
+
+// form css
+.ant-form {
+  .ant-form-item {
+    margin: 0 0 12px;
+
+    &.ant-form-item-has-error {
+      margin: 0 0 25px !important;
+
+      @media screen and (max-height: 601px) {
+        margin: 0 0 15px !important;
+      }
+
+      * {
+        font-family: $interRegularFont;
+
+        @media screen and (max-height: 601px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .ant-form-item-explain-error {
+      @extend .text-14;
+    }
+
+    .ant-input {
+      &.ant-input-status-error {
+        border-color: $error !important;
+      }
+    }
+
+    .ant-form-item-label {
+      padding: 0 0 7px !important;
+      padding-right: 20px !important;
+
+      .cus-label {
+        .anticon {
+          position: unset;
+          margin-right: 5px;
+
+          svg {
+            font-size: 14px;
+          }
+        }
+      }
+
+      label {
+        display: inline-flex;
+        position: relative;
+        color: $black;
+        font-family: $interMediumFont;
+        @extend .text-14;
+
+        &::before {
+          position: absolute;
+          right: -15px;
+          font-family: $interMediumFont !important;
+        }
+
+        .anticon {
+          position: absolute;
+          right: -30px;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .ant-form-item-control {
+      position: relative;
+
+      .ant-form-item-explain-error {
+        position: absolute;
+        line-height: 1;
+        margin-top: 5px;
+      }
+    }
+
+    .ant-select {
+      &.ant-select-status-error {
+        .ant-select-selector {
+          border: 1px solid $error !important;
+        }
+      }
+
+      .ant-select-selector {
+        padding: 0 12px;
+
+        .ant-select-selection-item {
+          @extend .text-14;
+          color: $lightBlack;
+          font-family: $interMediumFont;
+        }
+      }
+
+      .ant-select-arrow {
+        .anticon {
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ant input css
+.ant-select {
+  height: 42px;
+  border-radius: 8px;
+  background: #fff !important;
+  // border: 1px solid #e2e4e8 !important;
+
+  &:hover {
+    border: 1px solid #777777 !important;
+  }
+
+  &:focus-within {
+    border: 1px solid $primary !important;
+  }
+
+  .ant-select-selector {
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #fff !important;
+    border: 1px solid #e2e4e8 !important;
+
+    .ant-select-selection-search {
+      .ant-select-selection-search-input {
+        @extend .text-14;
+        color: $lightBlack;
+        font-family: $interMediumFont;
+      }
+    }
+
+    .ant-select-selection-item {
+      @extend .text-14;
+      color: $lightBlack;
+      font-family: $interMediumFont;
+    }
+
+    .ant-select-selection-placeholder {
+      color: $gray;
+      @extend .text-14;
+      font-family: $interRegularFont;
+    }
+  }
+}
+
+// side-content-wrapper
+.side-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding: 45px 0 0 30px;
+
+  @media screen and (max-width: 1440px) {
+    padding: 30px 0 0 15px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding: 10px 0 0 10px;
+  }
+
+  @media screen and (max-width: 991px) {
+    padding: 10px 5px 5px;
+  }
+
+  @media screen and (max-height: 601px) {
+    padding: 10px 0 0 0;
+  }
+}
+
+.create-content-editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  .blog-guide-wrapper {
+    padding: 15px 20px;
+    border: 1px solid $creamy;
+    background: $white;
+
+    @media screen and (max-height: 1440px) {
+      padding: 15px 15px;
+    }
+
+    @media screen and (max-height: 991px) {
+      padding: 10px 15px;
+    }
+
+    @media screen and (max-height: 601px) {
+      padding: 0 15px 10px;
+    }
+
+    .blog-guide-title {
+      label {
+        font-family: $interMediumFont;
+        color: #9d9d9d;
+        font-size: 16px;
+        font-weight: $medium500;
+      }
+
+      .required {
+        color: red;
+      }
+
+      .ant-input {
+        // background: none !important;
+        flex: 1;
+        height: auto;
+        font-family: $interSemiboldFont !important;
+        color: $lightBlack;
+        box-shadow: none;
+        margin-top: 10px;
+
+        // padding: 0;
+        // border-radius: 0;
+
+        &::placeholder {
+          color: $gray;
+          font-family: $interSemiboldFont !important;
+        }
+      }
+
+      h1 {
+        @extend .text-20;
+        font-family: $interSemiboldFont;
+        color: $lightBlack;
+        margin: 0;
+      }
+    }
+  }
+
+  .blog-guide-content {
+    padding: 30px;
+    border: 1px solid #E2E4E8;
+    border-radius: 12px;
+    background: $white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 1440px) {
+      padding: 24px;
+    }
+
+    @media screen and (max-width: 991px) {
+      padding: 20px 15px;
+    }
+
+    label {
+      font-family: $interSemiboldFont;
+      color: #111827;
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .required {
+      color: #EF4444;
+      margin-left: 4px;
+    }
+
+    .ant-input, .ant-input-affix-wrapper {
+        border-radius: 8px;
+        border-color: #D1D5DB;
+        
+        &:hover, &:focus {
+            border-color: $primary;
+        }
+    }
+
+    .blog-guide-content {
+      margin-top: 10px;
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    margin-top: 24px;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+
+    .ant-btn {
+      height: 44px !important;
+      min-width: 120px;
+      border-radius: 10px !important;
+      font-weight: 600;
+      font-size: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.light-btn {
+        @extend .light-btn;
+        border: 1px solid #D1D5DB !important;
+        background: $white !important;
+        color: #4B5563 !important;
+
+        &:hover {
+          background: #F9FAFB !important;
+          border-color: #9CA3AF !important;
+          color: #111827 !important;
+        }
+      }
+
+      &.primary-btn {
+          background: $primary !important;
+          border-color: $primary !important;
+          color: $white !important;
+          
+          &:hover {
+              background: darken($primary, 5%) !important;
+              border-color: darken($primary, 5%) !important;
+          }
+      }
+
+      svg {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.breadcrumbs-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 20px;
+  border-bottom: 1px solid $creamy;
+  background: $white;
+
+  @media screen and (max-height: 1440px) {
+    padding: 15px 15px;
+  }
+
+  @media screen and (max-height: 991px) {
+    padding: 10px 15px;
+  }
+
+  @media screen and (max-height: 601px) {
+    padding: 0 15px 10px;
+  }
+
+  .breadcrumbs-title {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
+    flex: 1;
+
+    .back {
+      display: flex;
+      align-items: center;
+      margin-right: 24px;
+      height: auto !important;
+      @extend .text-14;
+      font-family: $interMediumFont !important;
+      color: $primary !important;
+      text-transform: capitalize;
+      cursor: pointer !important;
+      text-decoration: none;
+      padding: 0 !important;
+      background: none !important;
+
+      * {
+        cursor: pointer !important;
+      }
+
+      svg {
+        width: auto;
+        color: $gray;
+        font-size: 18px;
+        margin-right: 5px;
+        transform: rotate(-180deg);
+
+        path {
+          stroke: $gray;
+          fill: $gray;
+          stroke-width: 0.5;
+        }
+      }
+    }
+
+    .ant-input {
+      background: none !important;
+      flex: 1;
+      height: auto;
+      @extend .text-18;
+      font-family: $interSemiboldFont !important;
+      color: $lightBlack;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+
+      &::placeholder {
+        color: $gray;
+        font-family: $interSemiboldFont !important;
+      }
+    }
+
+    h1 {
+      @extend .text-20;
+      font-family: $interSemiboldFont;
+      color: $lightBlack;
+      margin: 0;
+    }
+  }
+
+  .btn-wrapper {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .ant-btn {
+      min-width: 80px;
+      height: 38px !important;
+      margin: 0 10px;
+      border-radius: 10px !important;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.light-btn {
+        font-family: $interSemiboldFont !important;
+        color: $gray !important;
+        background: $white !important;
+      }
+
+      &.disabled {
+    background: lighten($primary, 15%) !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+  }
+
+      svg {
+        font-size: 16px;
+      }
+    }
+  }
+}

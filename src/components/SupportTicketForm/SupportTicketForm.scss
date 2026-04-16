@@ -1,0 +1,75 @@
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important;
+  background-color: #ff7800;
+  border-color: #ff7800;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    height: auto;
+    width: 25px;
+  }
+}
+
+.close-icon {
+  font-size: 12px;
+  color: #000;
+  height: auto;
+  width: 16px;
+}
+
+.modal-header {
+  text-align: start;
+  margin-bottom: 20px;
+
+  h2 {
+    margin-bottom: 5px;
+    color: $lightBlack;
+    font-family: $interSemiboldFont;
+    font-size: 22px;
+    font-weight: $semibold600;
+    line-height: normal;
+  }
+
+  p {
+    margin: 0;
+    color: #888;
+  }
+}
+
+.support-modal-container {
+  position: fixed !important;
+  width: 520px !important;
+  bottom: 80px !important;
+  right: 20px !important;
+  left: auto !important;
+  top: auto !important;
+  overflow: hidden !important;
+
+  .support-modal {
+    top: 0 !important;
+    padding: 10px;
+    .ant-modal-content {
+      max-height: 85vh;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1) !important;
+      .ant-modal-close {
+        top: 20px;
+        right: 20px;
+      }
+    }
+  }
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #ff7800;
+  border-color: #ff7800;
+}

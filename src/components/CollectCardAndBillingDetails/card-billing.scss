@@ -1,0 +1,103 @@
+.card-info-collect-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  h2 {
+    color: $black;
+    font-family: $interMediumFont;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: $light300;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background: #fff;
+  }
+
+  .card-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    h4 {
+      font-weight: $medium500;
+      font-size: 16px;
+    }
+
+    .card-details-element-container,
+    .billing-details-container {
+      display: flex;
+      gap: 12px;
+
+      .card-element,
+      .billing-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: $white;
+        flex: 1;
+
+        .stripe-element {
+          padding: 10px 12px !important;
+          align-items: center;
+          gap: 10px;
+          align-self: stretch;
+          border-radius: 4px;
+          background-color: #fff;
+          border: 1px solid #e2e4e8;
+
+          &:hover {
+            border: 1px solid #777777 !important;
+          }
+
+          &.active {
+            border: 1px solid $primary !important;
+          }
+        }
+
+        .card-error,
+        .error-message {
+          color: $LightRed;
+        }
+        label {
+          color: $gray;
+          font-size: 14px;
+          font-weight: $medium500;
+        }
+      }
+
+      .card-element {
+        &:first-child {
+          flex: 2;
+        }
+      }
+
+      .hr-row {
+        display: flex;
+        gap: 16px;
+      }
+    }
+
+    .billing-details-container {
+      flex-direction: column;
+    }
+
+    p {
+      font-size: 14px;
+      color: $gray;
+    }
+  }
+
+  button {
+    width: fit-content;
+    padding: 14px 32px;
+  }
+
+  .payment-error {
+    color: $LightRed;
+  }
+}

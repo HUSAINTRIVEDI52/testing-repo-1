@@ -1,0 +1,78 @@
+// Font Family
+
+$Inter_Light: "Inter-Light";
+$Inter_Light_url: url("../font/Inter-Light.ttf") format("truetype");
+
+$Inter_Regular: "Inter-Regular";
+$Inter_Regular_url: url("../font/Inter-Regular.ttf") format("truetype");
+
+$Inter_Medium: "Inter-Medium";
+$Inter_Medium_url: url("../font/Inter-Medium.ttf") format("truetype");
+
+$Inter_Semibold: "Inter-Semibold";
+$Inter_Semibold_url: url("../font/Inter-SemiBold.ttf") format("truetype");
+
+$Inter_Bold: "Inter-Bold";
+$Inter_Bold_url: url("../font/Inter-Bold.ttf") format("truetype");
+
+$Inter_Black: "Inter-Black";
+$Inter_Black_url: url("../font/Inter-Black.ttf") format("truetype");
+
+$Pacifico: "Pacifico";
+$Pacifico_url: url("../font/Pacifico-Regular.ttf") format("truetype");
+
+@font-face {
+  font-family: $Inter_Light;
+  src: $Inter_Light_url;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $Inter_Regular;
+  src: $Inter_Regular_url;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $Inter_Medium;
+  src: $Inter_Medium_url;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $Inter_Semibold;
+  src: $Inter_Semibold_url;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $Inter_Bold;
+  src: $Inter_Bold_url;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $Inter_Black;
+  src: $Inter_Black_url;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $Pacifico;
+  src: $Pacifico_url;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

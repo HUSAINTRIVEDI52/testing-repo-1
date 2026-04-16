@@ -1,0 +1,403 @@
+@import "./variables.scss";
+@import "./components.scss";
+@import "./mixins.scss";
+@import "./font.scss";
+@import "./button.scss";
+@import "./typographic.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+// Comprehensive disabled state rules
+:disabled,
+[disabled],
+.disabled,
+.ant-btn-disabled,
+.ant-select-disabled,
+.ant-input-disabled,
+.ant-checkbox-disabled,
+.ant-radio-disabled,
+.ant-select-item-option-disabled,
+.ant-steps-item-disabled,
+.locked-step,
+[style*="cursor: not-allowed"],
+[style*="cursor:not-allowed"] {
+  cursor: not-allowed !important;
+
+  &,
+  *,
+  &:hover,
+  &:hover * {
+    cursor: not-allowed !important;
+    pointer-events: auto !important; // keep so tooltips still work
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  * {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+body {
+  font-family: $interRegularFont;
+  background: $white;
+  color: $black;
+  @extend .text-14;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $lightGrey;
+  border-radius: 10px;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100vh - 70px);
+  overflow: auto;
+}
+
+.main-wrapper-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  width: calc(100% - 270px);
+  flex: 1;
+}
+
+// main-content
+.main-content {
+  // width: calc(100% - 270px);
+  // flex: 1;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+
+  @media screen and (max-width: 1199px) {
+    padding: 12px 15px;
+  }
+}
+
+// .ant-select-dropdown {
+//   overflow-y: auto;
+//   box-shadow: none !important;
+// }
+// .ant-dropdown-menu {
+//   max-height: 250px;
+//   overflow: auto;
+// }
+
+.custom-select-dropdown {
+  z-index: 105 !important;
+}
+
+
+// modal mask css
+.ant-modal-mask {
+  // filter: blur(100px) !important;
+  background: rgba($color: #222, $alpha: .55) !important;
+  backdrop-filter: blur(4px) !important;
+}
+// modal global css
+.ant-modal {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  .ant-modal-content {
+    position: relative;
+    background: $white;
+    padding: 20px 20px;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 0;
+
+    .ant-modal-close {
+      top: 12px;
+      right: 12px;
+      height: auto !important;
+      background: none !important;
+      justify-content: flex-end;
+      cursor: default !important;
+
+      svg {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.subscription-alert {
+  width: 100%;
+  background: #ffead7;
+  display: flex;
+  position: sticky;
+  top: 0;
+  max-height: 49px;
+  justify-content: center;
+  z-index: 999;
+  left: 0;
+
+  .subscription-alert-message {
+    width: fit-content;
+    gap: 30px;
+    background: #ffead7;
+
+    .ant-alert-icon {
+      display: none;
+    }
+
+    button {
+      color: #ff7c02 !important;
+      background: #ffead7 !important;
+      border: 1px solid #ff7c02 !important;
+      padding: 6px 16px;
+      max-height: 30px;
+    }
+  }
+}
+
+// ant-select-dropdown
+.ant-select-dropdown {
+  padding: 10px 15px;
+
+  .rc-virtual-list {
+    .rc-virtual-list-holder {
+      max-height: 276px;
+
+      .rc-virtual-list-holder-inner {
+        .ant-select-item {
+          padding: 10px 12px;
+          // border: 1px solid $creamy;
+          border-radius: 8px;
+          font-family: $interMediumFont;
+          text-transform: capitalize;
+          cursor: pointer !important;
+          margin-bottom: 5px;
+          @extend .text-14;
+
+          * {
+            cursor: pointer !important;
+          }
+
+          &.ant-select-item-option-disabled {
+            cursor: not-allowed !important;
+            * {
+              cursor: not-allowed !important;
+            }
+          }
+
+          &.ant-select-item-option-selected {
+            background-color: $primary !important;
+            /* Change to your desired color */
+            color: white !important;
+          }
+
+          &.ant-select-item-option-active {
+            background: #f8f8f8;
+            color: #000;
+            // @extend .text-14;
+          }
+        }
+      }
+    }
+  }
+
+  &.ai-model-popup {
+    .rc-virtual-list {
+      .rc-virtual-list-holder-inner {
+        .ant-select-item {
+          .ant-select-item-option-content {
+            display: flex;
+            align-items: center;
+
+            svg {
+              margin-right: 12px;
+              font-size: 20px;
+            }
+          }
+
+          &:hover {
+            .ant-select-item-option-content {
+              svg {
+                color: $white;
+
+                path {
+                  fill: $white;
+                }
+              }
+            }
+          }
+
+          &.ant-select-item-option-active {
+            .ant-select-item-option-content {
+              svg {
+                color: $white;
+
+                path {
+                  fill: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ant popover
+.ant-popover {
+  z-index: 999;
+
+  &.sidebar-popover {
+    padding-left: 10px;
+
+    @media screen and (max-width: 1199px) {
+      padding-left: 0;
+    }
+
+    .ant-popover-inner {
+      background: $white;
+      border-radius: 8px;
+      padding: 0;
+      border: 1px solid #eeeeee;
+    }
+  }
+
+  .ant-popover-arrow {
+    display: none;
+  }
+
+  .ant-popover-content {
+    .ant-popover-inner {
+      .ant-popover-inner-content {
+        .list-profile {
+          .profile-item {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 12px 10px;
+
+            &:first-child {
+              padding-bottom: 0;
+            }
+
+            &:hover {
+              background: $offWhite;
+
+              &:first-child {
+                background: none;
+              }
+            }
+
+            button {
+              width: 100%;
+              justify-content: flex-start;
+              height: auto !important;
+              background: none !important;
+              padding: 0;
+            }
+
+            .user-detail {
+              display: flex;
+              flex-direction: column;
+              padding: 0 0 8px;
+              border-bottom: 1px solid $creamy;
+              @extend .text-14;
+              font-family: $interRegularFont;
+              color: $lightBlack;
+
+              .user {
+                font-family: $interSemiboldFont;
+                margin: 0 0 4px;
+              }
+
+              .mail {
+                color: $gray;
+              }
+            }
+
+            .anticon {
+              margin-right: 10px;
+
+              svg {
+                font-size: 20px;
+              }
+
+              +span {
+                @extend .text-14;
+                color: $lightBlack;
+                font-family: $interMediumFont;
+                text-transform: capitalize;
+              }
+            }
+
+            &:last-child {
+              button {
+                * {
+                  color: $gray !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tox .tox-tbtn--bespoke .tox-tbtn__select-label {
+  color: $black !important;
+}
+
+.tox .tox-dialog__footer-end,
+.tox .tox-dialog__footer-start {
+  button {
+    background: $primary !important;
+    color: $white !important;
+    padding: 10px !important;
+  }
+}
+
+.react-joyride__tooltip button[aria-label="Close"] {
+  width: auto !important;
+  background: none !important;
+  border: none !important;
+  color: #888 !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  min-width: auto !important;
+}
+
+.react-joyride__tooltip button[aria-label="Skip"] {
+  width: auto !important;
+  background: none !important;
+  border: none !important;
+  color: #888 !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  min-width: auto !important;
+}
+
+.react-joyride__tooltip button[aria-label="Back"] {
+  @extend .light-btn;
+}

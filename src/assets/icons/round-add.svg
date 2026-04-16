@@ -1,0 +1,9 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ic:round-add">
+<g id="Vector">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 13H13H11H6C5.45 13 5 12.55 5 12C5 11.45 5.45 11 6 11H11H13H18C18.55 11 19 11.45 19 12C19 12.55 18.55 13 18 13Z" fill="#9D9D9D"/>
+<path d="M13 18V13H11V18C11 18.55 11.45 19 12 19C12.55 19 13 18.55 13 18Z" fill="#9D9D9D"/>
+<path d="M11 6V11H13V6C13 5.45 12.55 5 12 5C11.45 5 11 5.45 11 6Z" fill="#9D9D9D"/>
+</g>
+</g>
+</svg>

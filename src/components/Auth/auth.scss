@@ -1,0 +1,274 @@
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+
+  .left {
+    max-width: 560px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 0px 74px 0px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+
+    @media screen and (max-width: 1440px) {
+      max-width: 450px;
+      padding: 30px;
+    }
+
+    @media screen and (max-width: 1199px) {
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    @media screen and (max-width: 991px) {
+      max-width: 380px;
+      padding: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+      padding: 15px 0;
+    }
+
+    @media screen and (max-height: 601px) {
+      padding: 15px 5px;
+    }
+  }
+
+  .right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .auth-blog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: $lightBlack;
+    max-width: 720px;
+    width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    overflow: auto;
+
+    img {
+      margin-bottom: 65px;
+      max-width: 100%;
+    }
+
+    h3 {
+      text-align: center;
+      @extend .text-26;
+      font-family: $interSemiboldFont;
+      margin: 12px 0;
+    }
+
+    p {
+      text-align: center;
+      font-family: $interRegularFont;
+      @extend .text-14;
+      margin: 0 0 12px;
+    }
+  }
+
+  .content-wrapper {
+    max-width: 420px;
+    padding: 0 20px;
+    width: 100%;
+    min-height: 650px;
+    max-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+
+    @media screen and (max-width: 1199px) {
+      max-width: 100%;
+      padding: 0 15px;
+      min-height: 400px;
+    }
+
+    @media screen and (max-width: 991px) {
+      padding: 0 15px;
+    }
+
+    @media screen and (max-height: 601px) {
+      padding: 0 10px;
+    }
+
+    .logo {
+      width: 150px;
+      margin: 0 auto 30px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .top-section-details {
+      text-align: center;
+
+      h2 {
+        font-family: $interSemiboldFont;
+        @extend .text-28;
+        margin: 0 0 10px;
+        color: $lightBlack;
+      }
+
+      p {
+        @extend .text-16;
+        color: $gray;
+        margin: 0 0 10px;
+      }
+    }
+
+    .google-login {
+      width: 100%;
+      margin: 50px 0 0px;
+      text-align: center;
+
+      @media screen and (max-height: 601px) {
+        margin: 10px 0 5px;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+
+      button {
+        width: 100%;
+        background: $white !important;
+        color: $black !important;
+        margin: 0 auto 15px;
+        font-family: $interMediumFont !important;
+        border: 1px solid $creamy !important;
+      }
+    }
+
+    .ant-form {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      .ant-form-item {
+        display: inline-flex;
+        margin: 0 0 12px !important;
+
+        .ant-form-item-row {
+          width: 100%;
+          display: inline;
+        }
+
+        .ant-input-affix-wrapper {
+          padding: 0;
+          border: none;
+          background: $creamy;
+          border-radius: 8px;
+
+          .ant-input-suffix {
+            margin-right: 12px;
+          }
+        }
+
+        .ant-form-item-explain-error {
+          position: unset;
+          margin-top: 3px;
+        }
+
+        .ant-form-item-label {
+          label {
+            position: relative;
+            color: $gray;
+            font-family: $interMediumFont;
+            @extend .text-14;
+
+            &::before {
+              position: absolute;
+              right: -15px;
+              font-family: $interMediumFont;
+            }
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+
+        .ant-form-item-control {
+          .ant-form-item-control-input {
+            .input-text {
+              @extend .text-14;
+              font-family: $interMediumFont;
+            }
+
+            .ant-input {
+              @extend .ant-input;
+            }
+          }
+        }
+
+        button {
+          width: 100%;
+          margin-top: 15px;
+        }
+
+        &.account-check {
+          margin-top: 45px;
+
+          .ant-form-item-control-input-content {
+            text-align: center;
+            color: $lightBlack;
+            font-family: $interMediumFont;
+            @extend .text-16;
+
+            a {
+              margin-left: 5px;
+              color: $primary;
+              cursor: pointer !important;
+            }
+          }
+        }
+
+        &.no-input {
+          margin: 0 !important;
+
+          .ant-form-item-label {
+            label {
+              position: relative;
+              color: $gray;
+              font-family: $interMediumFont;
+              @extend .text-14;
+
+              &::before {
+                position: absolute;
+                right: -15px;
+                font-family: $interMediumFont;
+              }
+
+              &::after {
+                display: none;
+              }
+            }
+          }
+
+          .ant-form-item-control-input {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

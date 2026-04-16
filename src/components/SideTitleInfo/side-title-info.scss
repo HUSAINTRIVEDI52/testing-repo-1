@@ -1,0 +1,49 @@
+.title-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $lightGrey;
+    margin-bottom: 20px;
+    background: $white;
+    @media screen and (max-height: 601px) {
+        margin-bottom: 10px;
+    }
+    .title-content{
+        max-width: 650px;
+        min-width: 350px;
+        width: 100%;
+        flex: 1;
+        h1{
+            color: $lightBlack;
+            @extend .text-26;
+            font-family: $interSemiboldFont;
+            margin: 0 0 12px;
+            text-transform: capitalize;
+        }
+        p{
+            color: $gray;
+            @extend .text-16;
+            font-family: $interRegularFont;
+        }
+    }
+    .btn-wrapper{
+        display: flex;
+        align-items: center;
+        margin: 10px 0 5px 20px;
+        button{
+            padding: 10px 24px;
+            height: 48px !important;
+            @media screen and (max-width: 1440px) {
+                height: 44px !important;
+                padding: 10px 20px;
+            }
+            @media screen and (max-width: 1199px) {
+                height: 42px !important;
+                padding: 10px 15px;
+            }
+        }
+    }
+}

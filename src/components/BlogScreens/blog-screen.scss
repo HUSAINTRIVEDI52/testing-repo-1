@@ -1,0 +1,1302 @@
+.title-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 5px;
+
+  .title-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .title-content {
+      flex: 1;
+    }
+
+    .re-generate {
+      background: transparent !important;
+      color: #67945b !important;
+      margin-left: 20px;
+      margin-top: 10px;
+      font-family: $interMediumFont !important;
+      @extend .text-14;
+      display: flex;
+      align-items: center;
+      height: auto !important;
+      padding: 0 !important;
+
+      &:disabled {
+        color: #A0A0A0 !important;
+        cursor: not-allowed !important;
+        
+        svg path {
+          fill: #A0A0A0 !important;
+        }
+      }
+
+      svg {
+        margin-right: 10px;
+        font-size: 15px;
+
+        path {
+          fill: #67945b;
+        }
+      }
+    }
+  }
+
+  .ant-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 0;
+    overflow: auto;
+
+    .ant-form-item {
+      &.ant-form-item-has-error {
+        .ant-input-affix-wrapper {
+          border: 1px solid $error !important;
+        }
+      }
+    }
+
+    .outline-label {
+      .ant-form-item-control {
+        display: none;
+      }
+    }
+
+    .outline-image-wrapper {
+      margin-top: 12px;
+      padding: 10px;
+      border: 1px solid $creamy;
+      border-radius: 4px;
+
+      .outline-image {
+        width: 100%;
+
+        img {
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .drag-drop-btn {
+      margin-top: 15px;
+
+      .btn-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+
+        .re-generate {
+          border: none;
+          background-color: #e0eedc !important;
+          color: #67945b !important;
+          display: flex; /* Ensure flex for alignment */
+          align-items: center;
+          white-space: nowrap; /* Prevent text wrapping */
+
+          &:disabled {
+            background-color: #f5f5f5 !important;
+            color: #A0A0A0 !important;
+            cursor: not-allowed !important;
+
+            svg path {
+              fill: #A0A0A0 !important;
+            }
+          }
+
+          svg {
+            margin-right: 10px;
+            font-size: 15px;
+
+            path {
+              fill: #67945b;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      gap: 15px; // Added gap between left and right sections
+
+      .back-btn {
+        @extend .light-btn;
+      }
+
+      .left-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px; // Increased gap between buttons
+        flex-wrap: wrap; // Allow wrapping if needed
+      }
+
+      .ant-form-item {
+        margin: 0 5px;
+
+        .ant-btn {
+          min-width: 100px;
+          text-transform: uppercase;
+        }
+
+        &.back-btn {
+          .ant-btn {
+            @extend .light-btn;
+          }
+        }
+      }
+    }
+
+    &.reference-form {
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: 12px 0 0;
+
+      .reference-form-item {
+        flex: 1;
+        min-width: 300px;
+        margin: 3px 6px;
+        border: 1px solid $creamy;
+        padding: 10px;
+        border-radius: 4px;
+        position: relative;
+
+        .ant-form-item-control {
+          background: #fff !important;
+          border: 1px solid #e2e4e8 !important;
+          border-radius: 4px;
+
+          &:hover {
+            border: 1px solid #777777 !important;
+          }
+
+          &:focus,
+          &:active,
+          &:focus-within {
+            border: 1px solid $primary !important;
+          }
+        }
+
+        &.interlinking {
+          .link-container {
+            .ant-input-affix-wrapper {
+              border: 1px solid #e2e4e8;
+              border-radius: 4px;
+
+              &:hover {
+                border: 1px solid #777777 !important;
+              }
+
+              &:focus,
+              &:active,
+              &:focus-within {
+                border: 1px solid $primary !important;
+              }
+            }
+          }
+
+          .ant-form-item-control {
+            border: none !important;
+          }
+
+          .ant-form-item {
+            border: none !important;
+          }
+        }
+
+        .disable-button {
+          width: 97%;
+          position: absolute;
+          // height: 80px;
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          background-color: rgba(205, 205, 205, 0.3);
+          align-items: center;
+          height: 97%;
+        }
+
+        &.w-100 {
+          width: 100%;
+        }
+
+        .input-inline {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -6px;
+
+          .ant-form-item {
+            padding: 0;
+            margin: 0 6px;
+            flex: 1;
+
+            &:first-child {
+              max-width: 215px;
+            }
+          }
+        }
+
+        .ant-form-item {
+          position: sticky;
+          top: -7px;
+          background: $white;
+          margin: 0;
+          padding: 0 0 12px;
+        }
+
+        .ant-upload-wrapper {
+          .ant-upload-select {
+            width: 100%;
+
+            .ant-upload {
+              button {
+                width: 100%;
+                height: 40px !important;
+                background: #fff !important;
+                border: none !important;
+                border-radius: 4px !important;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                padding: 0 10px;
+
+                .ant-btn-icon {
+                  +span {
+                    font-family: $interRegularFont;
+                    @extend .text-14;
+                    color: $gray;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .ant-input-affix-wrapper {
+          height: 42px;
+          padding: 0 10px;
+          // background: $creamy;
+          background: #fff !important;
+          // border: 1px solid #e2e4e8 !important;
+          border: none;
+          border-radius: 8px;
+
+          .ant-input {
+            padding: 5px 5px 5px 0;
+            border: none !important;
+            height: 40px !important;
+            background: none !important;
+
+            &::placeholder {
+              font-family: $interRegularFont;
+            }
+          }
+
+          .ant-input-suffix {
+
+            svg,
+            svg * {
+              cursor: pointer !important;
+            }
+          }
+        }
+
+
+
+        .data-list {
+          padding: 12px 0 0;
+          border-top: 1px solid $offWhite;
+
+          .list {
+            border: 1px solid $creamy;
+            border-radius: 8px;
+            background: $white;
+            padding: 12px 8px;
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            word-break: break-all;
+
+            .text {
+              flex: 1;
+            }
+
+            &:first-child {
+              margin-top: 0;
+            }
+
+            .title-wrapper {
+              display: flex;
+              flex-direction: column;
+              flex: 1;
+
+              h3 {
+                @extend .text-14;
+                color: $lightBlack;
+                margin: 0 0 6px;
+                font-family: $interRegularFont;
+              }
+
+              a {
+                min-width: 100%;
+                white-space: normal;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+                color: black !important
+              }
+            }
+
+            .title,
+            a {
+              flex: 1;
+              @extend .text-14;
+              font-family: $interMediumFont;
+              color: $lightBlack;
+            }
+
+            a {
+              width: 0;
+              color: $linkColor;
+              font-family: $interRegularFont;
+              cursor: pointer !important;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            .icon {
+              margin-left: 15px;
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #e8e8e8;
+              cursor: pointer !important;
+
+              * {
+                cursor: pointer !important;
+              }
+            }
+          }
+        }
+
+        &.blur {
+          filter: blur(0.7px);
+        }
+      }
+    }
+
+  // Language option badges — match sidebar's .free-container style
+      &.writing-style-form {
+        .ant-form-item {
+          padding: 10px;
+          border: 1px solid $creamy;
+          border-radius: 6px;
+        }
+
+        .btn-wrapper {
+          .ant-form-item {
+            padding: 0px;
+            border: none;
+            border-radius: 6px;
+            margin-top: auto;
+          }
+        }
+      }
+
+    .lang-plan-badge {
+      padding: 0px 8px;
+      border-radius: 20px;
+      background: rgba(255, 124, 2, 0.14);
+      color: $primary !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      margin-left: 8px;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.5;
+    }
+
+    .ant-select {
+      .ant-select-arrow {
+        .anticon {
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    // Add spacing to dropdown options
+    .ant-select-dropdown {
+      .ant-select-item {
+        padding: 16px 20px;
+        min-height: 52px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .ant-select-item-option-selected {
+        background-color: #fff7e6;
+      }
+    }
+  }
+
+  h1 {
+    color: $lightBlack;
+    text-align: left;
+    font-family: $interSemiboldFont;
+    @extend.text-28;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: $gray;
+    font-family: $interMediumFont;
+    @extend.text-14;
+    margin-bottom: 12px;
+
+    .requiredStar {
+      color: $LightRed;
+      font-family: $interSemiboldFont;
+      @extend.text-14;
+    }
+  }
+
+  .blog-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title-container {
+      h1 {
+        color: $lightBlack;
+        text-align: left;
+        font-family: $interSemiboldFont;
+        @extend.text-28;
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: $gray;
+        font-family: $interMediumFont;
+        @extend.text-14;
+        margin-bottom: 12px;
+
+        .requiredStar {
+          color: $LightRed;
+          font-family: $interSemiboldFont;
+          @extend.text-14;
+        }
+      }
+    }
+
+    .re-generate {
+      border: none;
+      background-color: #e0eedc !important;
+      color: #67945b !important;
+
+      svg {
+        margin-right: 10px;
+        font-size: 15px;
+
+        path {
+          fill: #67945b;
+        }
+      }
+    }
+  }
+
+  .input-groups {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid $creamy;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    overflow: visible; /* Was auto, might clip tooltips or shadows */
+
+    /* Shared Button Styles */
+    .re-generate-btn, .keyword-btn {
+      height: 42px !important;
+      border-radius: 10px !important;
+      background: linear-gradient(135deg, $primary 0%, darken($primary, 10%) 100%) !important;
+      color: $white !important;
+      border: none !important;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      margin-left: 12px;
+      // margin-top: 15px; // Removed fixed top margin to allow flex alignment
+      display: flex !important; /* Force flex */
+      flex-direction: row !important; /* Force row layout */
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px;
+      white-space: nowrap;
+      min-width: 170px; /* Increased for 'Generate with AI' */
+      width: auto !important;
+      box-shadow: 0 4px 15px rgba($primary, 0.3);
+      padding: 0 15px; /* Add padding */
+
+      &:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+        box-shadow: 0 6px 20px rgba($primary, 0.4);
+      }
+      
+      &[disabled] {
+        opacity: 1 !important;
+        cursor: not-allowed;
+        background: #A0A0A0 !important;
+        color: #fff !important;
+        border: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+        
+        &:hover {
+          background: #A0A0A0 !important;
+          color: #fff !important;
+          transform: none;
+        }
+      }
+
+      .anticon {
+        display: flex;
+        align-items: center;
+        margin-right: 0; // handled by gap
+        svg {
+          font-size: 14px;
+          path { fill: $white !important; }
+        }
+      }
+    }
+
+    .topic-container {
+      width: 100%;
+      margin: 0 0 12px;
+      display: inline-block;
+
+      .ant-form-item {
+        margin: 0;
+      }
+    }
+
+    .target-location-container {
+      width: 100%;
+      margin: 0 0 12px;
+      display: inline-block;
+
+      .ant-form-item {
+        margin: 0;
+
+        .ant-row {
+          .ant-form-item-control {
+            .ant-form-item-control-input {
+              margin-bottom: 5px !important;
+            }
+          }
+        }
+      }
+    }
+
+    .primary-keyword-container {
+      width: 100%;
+      margin: 0 0 12px;
+
+      .ant-form-item {
+        margin: 0;
+      }
+
+      .primary-keyword-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        flex-direction: row;
+
+        .input-keyword {
+          flex-grow: 1;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-end;
+
+          .ant-form-item {
+            flex: 1;
+            min-width: 250px;
+
+            &.ant-form-item-has-error {
+              +button {
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+
+    .generate-title-container {
+      width: 100%;
+      margin: 0 0 12px;
+
+      .ant-form-item {
+        margin: 0;
+      }
+
+      .choose-title-wrapper {
+        width: 100%;
+
+        .ant-form-item {
+          width: 100%;
+          margin: 4px 0;
+
+          .ant-radio-button-wrapper {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid $creamy; // Uniformity: Match input borders
+            background: $white;
+            cursor: pointer !important;
+            @extend .text-14;
+            display: flex;
+            align-items: center;
+            font-family: $interRegularFont;
+            padding: 8px 12px;
+            height: auto;
+            color: $lightBlack; // Readability: Darker text
+
+            * {
+              cursor: pointer !important;
+            }
+
+            &.ant-radio-button-wrapper-disabled {
+              cursor: not-allowed !important;
+
+              * {
+                cursor: not-allowed !important;
+              }
+
+              &:hover {
+                border-color: $creamy !important;
+                color: $lightBlack !important;
+              }
+            }
+
+            &:hover {
+              border-color: $primary;
+              color: $primary;
+            }
+
+            &.ant-radio-button-wrapper-checked {
+              border-color: $primary;
+              color: $primary;
+              background: rgba(255, 124, 2, 0.08); // lighter primary background
+            }
+          }
+        }
+      }
+
+      .generate-title-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        flex-direction: row;
+        margin: 0 0 12px;
+
+        .input-title {
+          flex-grow: 1;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-end;
+          position: relative;
+
+          .ant-form-item {
+            flex: 1;
+            min-width: 250px;
+
+            &.ant-form-item-has-error {
+              +button {
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+
+
+      }
+
+
+    }
+  }
+}
+
+// Drag and Drop css
+
+.nested-drag-drop {
+  border: 1px solid $creamy;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-y: auto;
+  max-height: 50vh; // Constrain the height so it scrolls instead of expanding the whole page
+  display: flex;
+  flex-direction: column;
+
+  .ant-form-item {
+    margin: 0 !important;
+  }
+
+  .outline-loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    width: 100%;
+    
+    .ant-spin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .ant-spin {
+    align-self: center;
+  }
+
+  .droppable {
+    .draggable-category {
+      position: relative;
+      border: 1px solid $creamy;
+      padding: 8px 10px; // Reduced padding
+      border-radius: 4px;
+      margin: 0 0 8px; // Reduced margin
+      width: calc(100% - 65px);
+
+      .controls {
+        position: absolute;
+        top: 6px;
+        right: -65px;
+        display: flex;
+        align-items: center;
+
+        >button {
+          min-width: auto !important;
+          background: none !important;
+          height: auto !important;
+          margin: 0 15px 0 0 !important;
+          padding: 0 !important;
+          justify-content: center !important;
+          text-align: center;
+
+          span {
+            margin: 0 !important;
+          }
+
+          &:last-child {
+            margin-right: 0 !important;
+          }
+        }
+
+        svg {
+          font-size: 28px;
+          cursor: pointer !important;
+
+          * {
+            cursor: pointer !important;
+          }
+        }
+
+        .delete {
+          svg {
+            font-size: 15px;
+          }
+        }
+
+        .drag-handle {
+          cursor: grab !important;
+        }
+      }
+
+      .category-container {
+        display: flex;
+        flex-direction: column;
+
+        .category-child {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+
+          &.active {
+            margin-top: 15px;
+            max-height: 10000px; // Large enough for any content
+          }
+        }
+
+        .ant-input {
+          margin-left: 45px;
+          flex: 1;
+          width: calc(100% - 45px);
+        }
+
+        button {
+          outline: none;
+          width: 100%;
+          height: auto !important;
+          flex: 1;
+          @extend .text-16;
+          font-family: $interMediumFont !important;
+          color: $lightBlack !important;
+          margin: 0;
+          display: inline-flex;
+          justify-content: flex-start;
+          align-items: center;
+          background: $white !important;
+          padding: 0 !important;
+          text-align: left;
+          line-height: 1.2 !important;
+
+          span {
+            white-space: nowrap;
+            margin-right: 25px;
+          }
+        }
+
+        .droppable-item {
+          position: relative;
+          margin-left: 45px;
+
+          .controls {
+            position: unset;
+          }
+
+          .draggable {
+            position: relative;
+            display: flex;
+            flex-direction: row-reverse;
+            border: 1px solid $creamy;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin: 4px 0;
+
+            button {
+              @extend .text-14;
+
+              span {
+                margin-right: 25px;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.markdown-wrapper {
+  margin: 15px 0 0;
+  color: $lightBlack;
+
+  h1 {
+    @extend .text-28;
+    font-family: $interBoldFont;
+    margin: 0 0 20px;
+  }
+
+  h2 {
+    @extend .text-26;
+    font-family: $interBoldFont;
+    margin: 0 0 15px;
+  }
+
+  h3 {
+    @extend .text-24;
+    font-family: $interSemiboldFont;
+    margin: 0 0 15px;
+  }
+
+  a {
+    cursor: pointer !important;
+  }
+
+  p {
+    @extend .text-16;
+    font-family: $interRegularFont;
+    margin: 0 0 15px;
+    color: $lightBlack;
+
+    code {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 30px;
+    object-fit: contain;
+  }
+
+  table {
+    width: 100%;
+    margin: 0 0 15px;
+    border: 1px solid $lightBlack;
+    border-collapse: collapse;
+
+    tr {
+
+      th,
+      td {
+        text-align: left;
+        @extend .text-16;
+        padding: 5px;
+        border-bottom: 1px solid $lightBlack;
+      }
+
+      &:last-child {
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+
+  code {
+    width: 100%;
+    margin: 0 0 15px;
+    display: inline-block;
+  }
+
+  ol,
+  ul {
+    padding-left: 15px;
+    margin: 0 0 15px;
+
+    li {
+      @extend .text-16;
+      font-family: $interRegularFont;
+      margin: 3px 0 3px;
+
+      ol {
+        margin: 5px 0 0;
+        padding-left: 20px;
+
+        li {
+          margin: 3px 0 3px;
+        }
+      }
+    }
+  }
+
+  .stream-loading-skeleton {
+    .ant-skeleton-title {
+      background: rgba(255, 124, 2, 0.2) !important;
+    }
+    .ant-skeleton-paragraph > li {
+      background: rgba(255, 124, 2, 0.1) !important;
+    }
+  }
+
+  .btn-wrapper {
+    position: sticky;
+    bottom: -5px;
+    padding: 10px 0 5px;
+    left: 0;
+    width: calc(100% - -10px);
+    background: $white;
+    display: inline-flex;
+    margin: 20px -5px 0;
+    gap: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .unsaved-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #fff7e6;
+      border: 1px solid #ffd591;
+      border-radius: 6px;
+      font-family: $interMediumFont;
+      @extend .text-14;
+      color: #d46b08;
+      
+      .anticon {
+        font-size: 16px;
+        color: #fa8c16;
+      }
+    }
+
+    .left-btn {
+      display: flex;
+      gap: 10px;
+
+      .ant-btn {
+        background-color: #ffffff !important;
+        color: $primary !important;
+        border: 1px $primary solid !important;
+      }
+    }
+
+    .re-generate {
+      border: none;
+      background-color: #e0eedc !important;
+      color: #67945b !important;
+
+      svg {
+        margin-right: 10px;
+        font-size: 15px;
+
+        path {
+          fill: #67945b;
+        }
+      }
+    }
+
+    .ant-btn {
+      min-width: 80px;
+
+      &.download-dropdown-btn {
+        background-color: #ffffff !important;
+        color: $primary !important;
+        border: 1px $primary solid !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        &:hover,
+        &:focus {
+          color: lighten($primary, 10%) !important;
+          border-color: lighten($primary, 10%) !important;
+        }
+
+        .anticon {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.secondary-keyword-form {
+  height: auto;
+  overflow: unset;
+  // padding-top: 10px;
+
+  .ant-form-item {
+    .keyword-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .input-tags {
+        min-width: 300px;
+        border: 1px solid #e2e4e8 !important;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        min-height: 42px;
+        max-height: 45px;
+        // background: $creamy;
+        border-radius: 4px;
+        // padding: 3px 12px;
+        overflow-y: auto;
+        position: relative;
+        // margin-top: 5px;
+        // margin-bottom: 5px;
+
+        &:hover {
+          border: 1px solid #777777 !important;
+        }
+
+        &:focus,
+        &:active,
+        &:focus-within {
+          border: 1px solid $primary !important;
+        }
+
+        .placeholder {
+          width: 92%;
+          overflow: hidden;
+          white-space: nowrap;
+          @extend .text-14;
+          font-family: $interRegularFont;
+          color: $gray;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .ant-tag {
+          background: $lightGrey;
+          border-radius: 6px;
+          padding: 8px 10px;
+          margin: 3px 5px;
+          @extend .text-14;
+          font-family: $interMediumFont;
+          border: none;
+          display: flex;
+          align-items: center;
+
+          button {
+            height: auto !important;
+            color: $lightBlack !important;
+            background: transparent !important;
+            padding: 0 !important;
+            font-family: $interMediumFont !important;
+          }
+
+          .anticon {
+            margin-left: 10px;
+
+            svg {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .ant-input {
+          // background: #fff !important;
+          border: none !important;
+          margin: auto 0 !important;
+          // background: transparent !important;
+          min-width: 100px;
+          // margin: 3px 0 !important;
+          border-radius: 4px;
+          height: calc(100% - 6px) !important;
+          flex: 1;
+          padding: 4px 10px;
+          box-shadow: none;
+
+          // &:hover {
+          //   border: 1px solid #777777;
+          // }
+
+          // &:focus {
+          //   border: 1px solid $primary;
+          // }
+        }
+      }
+
+
+    }
+  }
+}
+
+// Custom Dropdown Styles
+.download-dropdown-overlay {
+  .ant-dropdown-menu {
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15); // Deeper, softer shadow
+    background: #ffffff;
+
+    .ant-dropdown-menu-item {
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 6px;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); // Smooth "apple-like" curve
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .ant-dropdown-menu-item-icon {
+        font-size: 18px;
+        margin-right: 14px;
+        transition: transform 0.3s ease;
+      }
+
+      .ant-dropdown-menu-title-content {
+        font-family: $interSemiboldFont; // Heavier font for impact
+        @extend .text-14;
+        color: $lightBlack;
+        transition: color 0.3s ease;
+      }
+
+      &:hover {
+        background: linear-gradient(90deg, #FFF0E3 0%, #FFFFFF 100%); // Gradient Orange fade
+        transform: translateX(5px); // Slide effect
+        box-shadow: -2px 2px 10px rgba(227, 79, 38, 0.1); // Subtle colored glow
+
+        .ant-dropdown-menu-item-icon {
+          transform: scale(1.1); // Graphic pop
+        }
+        
+        .ant-dropdown-menu-title-content {
+           color: $primary; // Text highlight
+        }
+      }
+    }
+  }
+}
+
+// Language plan badge in WritingStyle Select dropdown
+// Must be global because Ant Design renders dropdowns in a portal (document.body)
+.lang-plan-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: $interMediumFont;
+  background: rgba(255, 124, 2, 0.14);
+  color: $primary !important;
+  margin-left: 8px;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+// flag-dropdown
+.flag-dropdown {
+  .country-list  {
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 85% !important;
+    max-height: 260px !important;
+    .search {
+      display: flex;
+      flex-wrap: wrap;
+      span{
+        display: flex;
+        align-items: center;
+      }
+      input {
+        flex: 1;
+        height: 35px;
+      }
+    }
+  }
+}

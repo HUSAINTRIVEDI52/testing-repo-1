@@ -1,0 +1,395 @@
+// Define variables for reusable values
+$primary-color: #4caf50;
+$hover-color: #45a049;
+$border-radius: 10px;
+$shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+$modal-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+$danger-color: #ff0000;
+$error-color: #ffe6e6;
+
+.Checkout-page {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+
+  h1,
+  h2,
+  h3 {
+    font-weight: bold;
+    color: #333;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #444;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #777;
+  }
+
+  .plan-details {
+    margin: 10px auto;
+    padding: 10px;
+    width: fit-content;
+  }
+
+  // Container for Plan Details and Payment Form
+  .right {
+    width: 500px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+  }
+
+  .white-right {
+    padding: 20px;
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: $modal-shadow;
+  }
+
+  .right-top {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  // Card Input Elements
+  .card-element {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .card-label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  .cardNumber,
+  .cardExpiry,
+  .cardCvc {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+
+  .card-error {
+    color: $danger-color;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+
+  // Button Styling
+  .btn-card-submit {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+
+    &:disabled {
+      background-color: #d3d3d3;
+      cursor: not-allowed;
+    }
+
+    &:hover:enabled {
+      background-color: $hover-color;
+    }
+  }
+
+  // Payment Failure Message
+  .payment-failed {
+    background-color: $error-color;
+    border: 1px solid $danger-color;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    div {
+      margin-right: 10px;
+    }
+
+    .title {
+      font-weight: bold;
+      color: $danger-color;
+    }
+
+    .description {
+      color: #333;
+      font-size: 0.875rem;
+    }
+  }
+
+  // Modal Styling
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: $border-radius;
+    width: 300px;
+    text-align: center;
+    box-shadow: $modal-shadow;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #444;
+    }
+  }
+
+  .modal-button {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  // Loading Spinner
+  .ant-spin-dot {
+    display: inline-block;
+    margin-left: 5px;
+  }
+}
+
+.checkout-page {
+  // height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .back-btn {
+    width: fit-content;
+    color: $primary !important;
+    font-family: $interRegularFont !important;
+    font-size: 14px;
+    font-weight: $medium500;
+    background-color: transparent !important;
+    padding: 0;
+    outline: none;
+    align-self: flex-start;
+    height: 20px !important;
+    padding-left: 10%;
+    margin-bottom: 10px;
+  }
+
+  .cards-billing-wrapper {
+    width: 80%;
+
+    .main-header {
+      color: $black;
+      // text-align: center;
+      font-family: $interMediumFont;
+      font-size: 24px;
+      font-style: normal;
+      line-height: normal;
+    }
+
+    .payment-info-wrapper {
+      display: flex;
+      padding: 20px 18px;
+      flex-direction: column;
+      gap: 20px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      background: #fff;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 16px;
+          font-family: $interMediumFont;
+          color: $lightBlack;
+          margin: 0;
+          text-transform: capitalize;
+        }
+
+        button {
+          display: flex;
+          height: 27px !important;
+          padding: 6px 9px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .plan-summary-wrapper {
+      border-radius: 10px;
+      border: 1px solid #eee;
+      padding: 20px 18px;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+
+      .header h2 {
+        font-size: 16px;
+        font-family: $interMediumFont;
+        color: #222;
+        margin: 0;
+        text-transform: capitalize;
+      }
+
+      .total {
+        font-size: 18px;
+        font-family: $interMediumFont;
+      }
+    }
+
+    hr {
+      border-radius: 10px;
+      border: 1px solid #eee;
+      background: #fff;
+    }
+  }
+
+  .btn-card-submit {
+    background-color: $primary-color;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: fit-content;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    text-align: center;
+    margin-right: 10%;
+    margin-left: auto;
+
+    &:disabled {
+      background-color: #d3d3d3;
+      cursor: not-allowed;
+    }
+
+    &:hover:enabled {
+      background-color: $hover-color;
+    }
+  }
+}
+
+//// select card popup
+.select-card-model {
+  .ant-modal-content {
+    h2 {
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+
+    .select-card-container {
+      display: flex;
+      padding: 20px 18px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      background: #fff;
+      margin-bottom: 20px;
+
+      .header {
+        width: 100%;
+        h2 {
+          font-size: 16px;
+          font-family: $interMediumFont;
+          color: #222;
+          margin: 0;
+          text-transform: capitalize;
+        }
+      }
+      .cards-list {
+        width: 100%;
+        height: calc(100vh - 600px);
+
+        .card-element {
+          height: max-content;
+        }
+
+        .ant-radio-wrapper span.ant-radio + * {
+          display: none;
+        }
+
+        .card-info {
+          flex: 1;
+        }
+
+        .billing-info {
+          flex: 1;
+        }
+      }
+    }
+    .action-btns {
+      display: flex;
+      gap: 10px;
+      .cancel-btn {
+        justify-self: end !important;
+        border: 1px solid #e25454 !important;
+        border-radius: 6px;
+        background-color: $white !important;
+        color: #e25454 !important;
+      }
+    }
+
+    hr {
+      border-radius: 10px;
+      border: 1px solid #eee;
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,221 @@
+.keywordmodal-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 70vh; // Limit modal height
+
+  .custom-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding-top: 0;
+    z-index: 2;
+    background: $white;
+
+    .header-text {
+      width: 100%;
+      margin-top: -20px;
+      padding-top: 20px;
+      background: $white;
+
+      .model-header {
+        font-family: $interMediumFont;
+        @extend.text-18;
+        margin-right: 6px;
+      }
+
+      .model-subheader {
+        font-family: $interMediumFont;
+        @extend.text-14;
+        color: $gray;
+      }
+    }
+
+    .img-cancle {
+      cursor: pointer !important;
+    }
+  }
+
+  .search-keyword-container {
+    width: 100%;
+    background: $white;
+    padding: 12px 0 10px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $offWhite;
+    position: sticky;
+    top: 25px;
+    z-index: 1;
+
+    .ant-input {
+      flex: 1;
+      margin-right: 15px;
+    }
+
+    button {
+      height: 42px !important;
+      min-width: 100px;
+      font-family: $interMediumFont !important;
+      background: linear-gradient(135deg, $primary 0%, darken($primary, 10%) 100%) !important;
+      color: $white !important;
+      border: none !important;
+      box-shadow: 0 4px 15px rgba($primary, 0.3);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border-radius: 4px;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($primary, 0.4);
+        filter: brightness(1.1);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .scrollable-table-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 0 10px 0;
+    min-height: 0; // Important for flex scrolling
+  }
+
+  .modal-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    border-top: 1px solid $offWhite;
+    background: $white;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+
+    button {
+      height: 42px !important;
+      min-width: 120px;
+      font-family: $interMediumFont !important;
+      background: linear-gradient(135deg, $primary 0%, darken($primary, 10%) 100%) !important;
+      color: $white !important;
+      border: none !important;
+      box-shadow: 0 4px 15px rgba($primary, 0.3);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border-radius: 4px;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($primary, 0.4);
+        filter: brightness(1.1);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.regeneration-content-wrapper {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+
+  .body-content {
+
+    .header-text {
+      font-size: 25px;
+      font-weight: $bold700;
+      font-family: $interBoldFont;
+    }
+
+    .body-text {
+      font-size: 20px;
+      font-weight: $regular400;
+      font-family: $interMediumFont;
+    }
+
+    .note-text {
+      font-size: 15px;
+      font-weight: $regular400;
+      font-family: $interMediumFont;
+      color: $LightRed
+    }
+  }
+
+  .btn-regenerate {
+    align-self: end;
+  }
+}
+
+.Generation-content-wrapper {
+  padding: 10px 5px;
+  width: 100%;
+
+  .body-content {
+    width: 100%;
+
+    .input-area {
+      width: 100%;
+      border: 1px $gray solid
+    }
+  }
+  .btn-regenerate {
+    background: #ff6600 !important;
+    border-color: #ff6600 !important;
+    color: #fff !important;
+    height: 44px;
+    width: auto;
+    min-width: 180px;
+    font-weight: 500;
+    border-radius: 10px;
+    opacity: 1 !important;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    padding: 0 20px;
+
+    &:disabled {
+      background: #cccccc !important;
+      border-color: #cccccc !important;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.confirmation-content-wrapper {
+  .confirmation-content-title {
+    border-bottom: 1px solid $lightGrey;
+    padding-bottom: 8px;
+
+    h2 {
+      font-size: 24px;
+      color: $primary;
+      font-weight: $semibold600;
+    }
+  }
+
+  .confirmation-content {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .main-text {
+      font-size: 22px;
+      font-weight: $semibold600;
+
+    }
+
+    .bottom-text {
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.45)
+    }
+  }
+}

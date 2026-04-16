@@ -1,0 +1,152 @@
+.reference-wrapper {
+  width: 100%;
+
+  .title {
+    color: $lightBlack;
+    font-family: $interSemiboldFont;
+    @extend.text-28;
+  }
+
+  .subtitle {
+    color: $gray;
+    font-family: $interMediumFont;
+    @extend.text-14;
+  }
+
+
+
+  .collect-data {
+    display: flex;
+    width: 100%;
+    margin: 24px 0;
+    gap: 12px;
+
+    .external-url {
+      width: 50%;
+      border: 1px solid $creamy;
+      border-radius: 4px;
+      padding: 10px;
+
+      .enter-links {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-bottom: 12px;
+        border-bottom: 1px solid $offWhite;
+      }
+
+      .show-links {
+        margin-top: 12px;
+
+        .individual-link {
+          display: flex;
+          padding: 12px 8px;
+          border: 1px solid $creamy;
+          border-radius: 8px;
+          width: 100%;
+
+          .title-link {
+            gap: 6px;
+            width: 95%;
+
+            .title {
+              color: $lightBlack;
+              font-family: $interMediumFont;
+              @extend.text-14;
+            }
+
+            .link {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              color: #3330e4;
+              font-family: $interRegularFont;
+              @extend.text-14;
+            }
+          }
+
+          .delete-link {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .upload-files {
+      width: 50%;
+      border: 1px solid $creamy;
+      border-radius: 4px;
+      padding: 10px;
+
+      .upload-input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-bottom: 12px;
+        border-bottom: 1px solid $offWhite;
+      }
+
+      .show-files {
+        margin-top: 12px;
+
+        .individual-file {
+          display: flex;
+          padding: 12px 8px;
+          border: 1px solid $creamy;
+          border-radius: 8px;
+          width: 100%;
+
+          .title {
+            color: $lightBlack;
+            font-family: $interMediumFont;
+            @extend.text-14;
+            width: 95%;
+          }
+        }
+      }
+    }
+
+    .heading {
+      color: $gray;
+      font-family: $interMediumFont;
+      @extend.text-14;
+      gap: 4px;
+      display: flex;
+      margin-bottom: 12px;
+
+      .required {
+        color: red;
+      }
+    }
+
+    input {
+      display: flex;
+      padding: 8px;
+      border-radius: 8px;
+      background-color: $creamy;
+      width: 100%;
+      border: 1px solid $creamy;
+      height: 40px;
+
+      &::placeholder {
+        color: $gray;
+        font-family: $interRegularFont;
+        @extend .text-14;
+      }
+    }
+
+    input:focus-visible {
+      outline: none;
+    }
+
+    .plus-icon {
+      position: absolute;
+      right: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+.back-next-btns {
+  display: flex;
+}

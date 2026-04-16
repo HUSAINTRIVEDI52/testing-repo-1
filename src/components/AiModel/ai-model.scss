@@ -1,0 +1,33 @@
+.ai-model-wrapper{
+    .ant-form{
+        width: 100%;
+        margin: 0 -10px;
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: 991px){
+            margin: 0;
+        }
+        .ant-form-item{
+            width: calc(50% - 20px);
+            margin: 0 10px 20px;
+            @media screen and (max-width: 991px){
+                width: 100%;
+                margin: 0 0 20px;
+            }
+            .ant-select{
+                .ant-select-selector{
+                    border-radius: 4px;
+                    svg {
+                        margin-right: 12px;
+                        font-size: 20px;
+                    }
+                    .ant-select-selection-item{
+                        display: flex;
+                        align-items: center;
+                        @extend .text-16;
+                    }
+                }
+            }
+        }
+    }
+}

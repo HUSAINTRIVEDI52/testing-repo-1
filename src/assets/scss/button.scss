@@ -1,0 +1,63 @@
+// button css
+button {
+  padding: 10px 24px;
+  line-height: 1 !important;
+  background: $primary !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  @extend .text-14;
+  font-family: $interBoldFont !important;
+  color: $white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none !important;
+  min-width: 80px;
+
+  * {
+    cursor: pointer;
+  }
+
+  &:disabled,
+  &[disabled],
+  &.ant-btn-disabled {
+    background: lighten($primary, 15%) !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+    pointer-events: auto !important; // keep so tooltip still works on disabled ant buttons
+
+    * {
+      cursor: not-allowed !important;
+    }
+  }
+}
+
+.light-btn {
+  background: $offWhite !important;
+  color: #777 !important;
+  font-family: $interBoldFont !important;
+  border-radius: 10px !important;
+  border: 1px solid #777 !important;
+  padding: 10px 24px !important;
+  gap: 8px !important;
+}
+
+.bordered-btn {
+  border: 1px solid $primary !important;
+  background: rgba($color: $primary, $alpha: 0.08) !important;
+  color: $primary !important;
+  font-family: $interSemiboldFont !important;
+  border-radius: 10px !important;
+}
+
+// Remove default Ant Design button focus/click outlines
+.ant-btn:focus,
+.ant-btn:active,
+.ant-btn:focus-visible,
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}

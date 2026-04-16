@@ -1,0 +1,172 @@
+.onboarding-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  max-height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -35%);
+  overflow: auto;
+  border-radius: 10px;
+  border: 1px solid $offWhite;
+  padding: 20px;
+  background: white;
+
+  .onboarding-container {
+    width: 100%;
+
+    .count-step {
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+
+      @media screen and (max-width: 1440px) {
+        padding: 10px;
+      }
+
+      @media screen and (max-height: 601px) {
+        padding: 8px;
+      }
+
+      .step {
+        height: 6px;
+        margin: 0 5px;
+        border-radius: 15px;
+        flex: 1;
+        background: $lightGrey;
+
+        @media screen and (max-width: 1440px) {
+          height: 5px;
+          margin: 0 3px;
+        }
+
+        @media screen and (max-width: 1199px) {
+          height: 4px;
+          margin: 0 2px;
+        }
+
+        &.active {
+          background: $primary;
+        }
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: $semibold600;
+
+
+      span {
+        color: $primary;
+        font-family: $Pacifico;
+      }
+
+      @extend.text-28;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $offWhite;
+      margin: 0 0 5px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-list {
+      h3 {
+        font-weight: $semibold600;
+        font-size: 18px;
+        padding-left: 12px;
+      }
+
+      .ant-radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .ant-radio-wrapper {
+          width: calc(50% - 8px);
+          margin: 4px 4px;
+          padding: 12px 8px;
+          border-radius: 8px;
+          border: 1px solid $creamy;
+          display: flex;
+          flex-wrap: wrap;
+
+          .ant-radio {
+            .ant-radio-inner {
+              background: $white;
+              width: 24px;
+              height: 24px;
+
+              &::after {
+                width: 16px;
+                height: 16px;
+                transform: translate(-50%, -50%) scale(1);
+                left: 50%;
+                top: 50%;
+                margin: 0;
+              }
+            }
+
+            &.ant-radio-checked {
+              .ant-radio-inner {
+                &::after {
+                  background: $primary;
+                }
+              }
+            }
+
+            +span {
+              flex: 1;
+              // color: $gray;
+              font-family: $interMediumFont;
+              @extend .text-14;
+            }
+          }
+
+          &.ant-radio-wrapper-checked {
+            .ant-radio {
+              +span {
+                color: $lightBlack;
+                font-family: $interMediumFont;
+                @extend .text-14;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-section {
+    width: 100%;
+    margin: 32px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0 !important;
+
+    .ant-btn {
+      margin: 0 12px;
+      border: none;
+      font-family: $interMediumFont !important;
+
+      &.no-margin {
+        margin: 0;
+      }
+
+      &.back {
+        margin-left: 0;
+        min-width: 100px;
+        background: $offWhite !important;
+        color: $black !important;
+      }
+
+      &.next {
+        margin-right: 0;
+        flex: 1;
+      }
+    }
+  }
+}

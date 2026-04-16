@@ -1,0 +1,813 @@
+.blog-edit-wrapper {
+  position: relative;
+  height: calc(100% + 24px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .ant-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .blog-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    max-height: 100%;
+    overflow: hidden;
+
+    .side-blog-content {
+      display: flex;
+      width: 450px;
+      padding: 20px 0;
+      border-right: 1px solid $creamy;
+      max-height: 100%;
+
+      @media screen and (max-width: 1440px) {
+        width: 380px;
+        padding: 15px 0;
+      }
+
+      @media screen and (max-width: 1199px) {
+        width: 340px;
+        padding: 12px 0;
+      }
+
+      @media screen and (max-width: 991px) {
+        width: 300px;
+        // padding: 12px 0;
+      }
+
+      // sidebar-blog-wrapper
+      .sidebar-blog-wrapper {
+        padding: 0 20px;
+        max-height: 100%;
+        overflow: auto;
+
+        @media screen and (max-width: 1440px) {
+          padding: 0 15px;
+        }
+
+        @media screen and (max-width: 1199px) {
+          padding: 0 10px;
+        }
+
+        .sidebar-blog-item {
+          width: 100%;
+          display: inline-block;
+          background: $offWhite;
+          padding: 25px 10px;
+          border-radius: 10px;
+          color: $lightBlack;
+          margin: 6px 0;
+
+          @media screen and (max-width: 1440px) {
+            padding: 20px 10px;
+          }
+
+          @media screen and (max-width: 1199px) {
+            padding: 15px 10px;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          h3 {
+            font-family: $interSemiboldFont;
+            @extend .text-18;
+          }
+
+          p {
+            margin: 12px 0 0;
+            @extend .text-14;
+            font-family: $interRegularFont;
+
+            @media screen and (max-width: 1440px) {
+              margin: 10px 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    .middle-blog-content {
+      flex: 1;
+      padding: 24px 24px 0;
+
+      @media screen and (max-width: 1440px) {
+        padding: 20px 20px 0;
+      }
+
+      @media screen and (max-width: 1199px) {
+        padding: 15px 15px 0;
+      }
+    }
+  }
+}
+
+// tiny editor css
+.tox-tinymce-aux {
+  button {
+    background: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  .tox-dialog {
+
+    button {
+      min-width: 20px !important;
+
+      svg {
+        color: $lightBlack;
+      }
+    }
+  }
+
+  .tox-form__group {
+    margin-bottom: 10px !important;
+
+    label {
+      padding-bottom: 8px;
+    }
+
+    button {
+      color: $lightBlack !important;
+      font-size: 14px !important;
+    }
+  }
+}
+
+.tox-tinymce {
+  border: none !important;
+  min-height: 500px !important;
+  height: calc(100% - 50px) !important;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
+
+  &.tox-edit-focus {
+    .tox-edit-area {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  button {
+    background: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  .tox-editor-container {
+    .tox-editor-header {
+      box-shadow: none !important;
+      padding: 10px !important;
+      background: $creamy !important;
+      border-radius: 10px;
+
+      .tox-toolbar {
+        background-image: none !important;
+        padding: 5px 0;
+
+        .tox-toolbar__group {
+          border-right: 1px solid #f1f1f1;
+          margin: 6px 0;
+
+          @media screen and (max-width: 1199px) {
+            padding: 0 5px;
+            margin: 3px 0;
+          }
+
+          button {
+            margin: 0;
+          }
+        }
+
+        .tox-tbtn--select {
+          height: 100% !important;
+          display: flex;
+          align-items: center;
+          margin: 0;
+
+          .tox-tbtn__select-label {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            color: $lightBlack;
+            font-family: $interMediumFont;
+          }
+        }
+      }
+    }
+  }
+}
+
+// plagrism-check-wrapper
+.plagrism-check-wrapper {
+  width: 310px;
+  height: calc(100vh - 70px);
+  position: fixed;
+  bottom: -1px;
+  right: 0;
+  z-index: 999;
+  border-radius: 6px 0 0 6px;
+  padding: 11px 12px;
+  background: $white;
+  transition: 0.7s all cubic-bezier(0.66, -0.09, 0.62, 1.15);
+  transform: translatex(100%);
+  border: 1px solid $lightGrey;
+
+  * {
+    transition: 0.2s all cubic-bezier(0.66, -0.09, 0.62, 1.15);
+  }
+
+  &.show {
+    padding: 15px 12px;
+    transform: translateX(0);
+
+    .close-btn {
+      height: 45px !important;
+      border: 1px solid $lightGrey !important;
+      border-right: 0 !important;
+    }
+  }
+
+  // .close-btn {
+  //   position: absolute;
+  //   left: -34px;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   width: 34px !important;
+  //   height: 150px !important;
+  //   background: $white !important;
+  //   color: $white !important;
+  //   border: 2px solid $primary !important;
+  //   border-right: 0 !important;
+  //   border-radius: 4px 0 0 4px !important;
+  //   padding: 0 !important;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   cursor: pointer !important;
+  //   transition-duration: 0.05s;
+  //   min-width: 30px !important;
+
+  //   &:disabled {
+  //     opacity: .8;
+  //     filter: grayscale(1);
+  //     cursor: not-allowed !important;
+
+  //     * {
+  //       opacity: .8;
+  //       filter: grayscale(1);
+  //       cursor: not-allowed !important;
+  //     }
+  //   }
+
+  //   .text {
+  //     transform: rotate(-90deg);
+  //     white-space: nowrap;
+  //     color: $lightBlack;
+  //   }
+
+  //   svg {
+  //     transform: rotate(0);
+  //     font-size: 16px;
+
+  //     path {
+  //       stroke: $lightBlack;
+  //       fill: $lightBlack;
+  //     }
+  //   }
+
+  //   * {
+  //     cursor: pointer !important;
+  //   }
+  // }
+
+  // .check-tag-wrapper {
+  //   background: $white;
+  //   display: flex;
+  //   flex-direction: column;
+  //   border-radius: 6px;
+  //   padding: 10px;
+  //   margin-top: 12px;
+
+  //   .check-tag {
+  //     width: fit-content;
+  //     padding: 10px;
+  //     border-radius: 20px;
+  //     @extend .text-12;
+  //     margin: 5px 0;
+  //     display: inline-flex;
+  //     align-items: center;
+
+  //     &.w-100 {
+  //       flex-wrap: wrap;
+  //       border-radius: 4px;
+
+  //       .label {
+  //         margin: 3 0 3px;
+  //       }
+
+  //       span {
+  //         line-height: inherit;
+  //         margin-top: 3px;
+  //       }
+
+  //       * {
+  //         width: 100%;
+  //       }
+  //     }
+
+  //     &.purple {
+  //       background: #e2e1fb;
+  //       color: #836fff;
+  //     }
+
+  //     &.orange {
+  //       background: #feeace;
+  //       color: #ff7c02;
+  //     }
+
+  //     &.green {
+  //       background: #eaf0e8;
+
+  //       .label {
+  //         color: #4d7e40;
+  //       }
+
+  //       span {
+  //         color: $lightBlack;
+  //       }
+  //     }
+
+  //     &.no-bg {
+  //       background: none;
+  //       padding-left: 0;
+
+  //       .label {
+  //         color: #a749c7;
+  //       }
+  //     }
+
+  //     .label {
+  //       font-family: $interMediumFont;
+  //       text-transform: capitalize;
+  //       margin-right: 3px;
+  //       line-height: 1;
+  //     }
+
+  //     span {
+  //       font-family: $interRegularFont;
+  //       line-height: 1;
+  //     }
+
+  //     a {
+  //       cursor: pointer !important;
+  //       color: #5a83ec;
+  //     }
+  //   }
+  // }
+
+  // .check-block {
+  //   display: flex;
+  //   align-items: center;
+
+  //   span {
+  //     @extend .text-16;
+  //     font-family: $interSemiboldFont;
+  //     color: $lightBlack;
+  //     margin-right: 10px;
+  //     flex: 1;
+  //   }
+
+  //   .ant-btn {
+  //     min-width: 60px;
+  //     height: auto !important;
+  //     border-radius: 4px !important;
+  //     // background: $white !important;
+  //     padding: 6px 10px !important;
+  //     box-shadow: none !important;
+
+  //     span {
+  //       color: $white !important;
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+}
+
+.custom-ok-btn {
+  @extend .light-btn;
+}
+
+// AI Image button in blog edit toolbar
+.ai-image-btn {
+  background: linear-gradient(135deg, #ff7c02, #ff9f40) !important;
+  color: $white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  height: 44px !important;
+  padding: 0 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s !important;
+
+  &:hover {
+    background: linear-gradient(135deg, darken(#ff7c02, 6%), darken(#ff9f40, 6%)) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(255, 124, 2, 0.3);
+  }
+
+  .anticon {
+    font-size: 16px !important;
+  }
+}
+
+// Blog Image Generator Modal
+.blog-image-generator-modal {
+  .ant-modal-content {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .ant-modal-header {
+    padding: 20px 24px 12px;
+    border-bottom: 1px solid $lightGrey;
+  }
+
+  .ant-modal-body {
+    padding: 20px 24px 24px;
+  }
+
+  .bimg-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .bimg-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-family: $interSemiboldFont;
+      font-size: 13px;
+      color: $lightBlack;
+    }
+
+    textarea.ant-input,
+    .ant-input {
+      border-radius: 10px !important;
+      font-family: $interRegularFont;
+      font-size: 14px;
+      border: 1px solid #d9d9d9 !important;
+      outline: none !important;
+      box-shadow: none !important;
+
+      &:focus, &:hover, &:active {
+        border-color: #d9d9d9 !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+    }
+
+    // Fix textarea wrapper (Ant wraps textarea in a span)
+    .ant-input-textarea,
+    .ant-input-textarea-show-count {
+      .ant-input {
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+
+        &:focus, &:hover, &:active {
+          border-color: #d9d9d9 !important;
+          box-shadow: none !important;
+          outline: none !important;
+        }
+      }
+    }
+
+    .ant-input-textarea-show-count::after {
+      color: #999;
+      font-size: 12px;
+    }
+
+    // Select dropdowns — kill the orange outline completely
+    .ant-select {
+      border: none !important;
+      &.ant-select-focused {
+        .ant-select-selector {
+          border-color: orange !important;
+        }
+      }
+      &:hover {
+          .ant-select-selector {
+             border-color: orange !important;
+          }
+      }
+      .ant-select-selector {
+        border-radius: 10px;
+        border: 1px solid #d9d9d9 !important;
+        height: 40px !important;
+        align-items: center;
+        box-shadow: none !important;
+        outline: none !important;
+        transition: border-color 0.2s !important;
+
+      }
+
+      // Kill the outer outline Ant adds on focus (causes double border)
+      // &.ant-select-focused .ant-select-selector,
+      // &.ant-select-open .ant-select-selector,
+      // &.ant-select-focused:not(.ant-select-disabled) .ant-select-selector,
+      // &.ant-select-outlined:not(.ant-select-disabled) .ant-select-selector {
+      //  border: none !important;
+      // }
+
+      // &:hover .ant-select-selector {
+      //   border: none !important;
+      // }
+    }
+  }
+
+  .bimg-settings-row {
+    display: flex;
+    gap: 12px;
+
+    .bimg-field {
+      flex: 1;
+    }
+  }
+
+  .bimg-generate-btn {
+    background: $primary !important;
+    border: none !important;
+    border-radius: 12px !important;
+    height: 48px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+
+    &:hover:not(:disabled) {
+      background: darken($primary, 5%) !important;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  .bimg-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 32px 0;
+
+    .bimg-spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #f0f0f0;
+      border-top: 3px solid $primary;
+      border-radius: 50%;
+      animation: bimg-spin 0.8s linear infinite;
+    }
+
+    @keyframes bimg-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    span {
+      font-family: $interRegularFont;
+      font-size: 13px;
+      color: $gray;
+    }
+  }
+
+  .bimg-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bimg-preview-card {
+    border: 1px solid $lightGrey;
+    border-radius: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      display: block;
+      max-height: 400px;
+      object-fit: contain;
+      background: $offWhite;
+    }
+  }
+
+  .bimg-revised {
+    background: rgba(255, 124, 2, 0.05);
+    border: 1px solid rgba(255, 124, 2, 0.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: $lightBlack;
+    line-height: 1.5;
+
+    strong {
+      color: $primary;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  .bimg-insert-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+
+    .ant-btn {
+      height: 40px !important;
+      border-radius: 10px !important;
+      font-weight: 500;
+    }
+
+    .bimg-insert-btn {
+      background: $primary !important;
+      border: none !important;
+      color: $white !important;
+      padding: 0 24px !important;
+      font-weight: 600 !important;
+
+      &:hover {
+        background: darken($primary, 5%) !important;
+      }
+    }
+  }
+}
+
+// Export button and dropdown styles (Figma specs)
+.export-btn {
+  background: $primary !important;
+  color: $white !important;
+  border: none !important;
+  border-radius: 10px !important; // Figma: 10px not 16px
+  height: 44px !important;
+  padding: 0 24px !important; // Figma: 24px left/right
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  min-width: 113px !important; // Figma: 113px
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important; // Figma: 10.3px
+  
+  &:hover:not(:disabled) {
+    background: darken($primary, 5%) !important;
+    color: $white !important;
+  }
+  
+  &:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+  }
+
+  .anticon {
+    font-size: 10px !important; // Figma: 10px width
+  }
+}
+
+.export-dropdown-overlay {
+  .ant-dropdown {
+    padding: 0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+    overflow: hidden !important;
+  }
+}
+
+.export-dropdown-content {
+  background: $white;
+  border-radius: 16px;
+  padding: 16px;
+  width: 212px; // 180px content + 16px padding each side
+  border: 1px solid #E1E1E1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  .format-radio-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important; // Figma: 4px gap
+    margin-bottom: 16px !important;
+    width: 100% !important;
+
+    .format-radio-item {
+      margin: 0 !important;
+      padding: 10px 12px 10px 16px !important; // Figma: 10px top/bottom, 12px right, 16px left
+      border-radius: 10px !important; // Figma: 10px
+      display: flex !important;
+      align-items: center !important;
+      font-size: 16px !important;
+      font-family: $interRegularFont !important;
+      color: $lightBlack !important;
+      transition: all 0.2s ease !important;
+      background: transparent !important;
+      border: none !important;
+      min-height: 40px !important; // Figma: 40px Hug height
+      width: 180px !important; // Figma: 180px Fixed width
+      gap: 10px !important; // Figma: 10px gap
+
+      // Remove hover background
+      &:hover {
+        background: transparent !important;
+      }
+
+      .ant-radio {
+        &-wrapper {
+          background: transparent !important;
+        }
+
+        &-inner {
+          width: 20px !important;
+          height: 20px !important;
+          border-width: 2px !important;
+          border-color: #D1D1D1 !important;
+        }
+
+        &-checked {
+          .ant-radio-inner {
+            border-color: $primary !important;
+            background-color: $white !important;
+
+            &::after {
+              background-color: $primary !important;
+              width: 12px !important;
+              height: 12px !important;
+              transform: scale(1) !important;
+              margin-left: -6px !important; // Half of width for perfect centering
+              margin-top: -6px !important;  // Half of height for perfect centering
+              top: 50% !important;
+              left: 50% !important;
+            }
+          }
+        }
+
+        &:hover .ant-radio-inner {
+          border-color: $primary !important;
+        }
+      }
+
+      // Selected state background - Figma: #FAFAFA (Off-White)
+      &.ant-radio-wrapper-checked {
+        background: #FAFAFA !important;
+      }
+
+      span:not(.ant-radio) {
+        padding-left: 0 !important;
+      }
+    }
+  }
+
+  .download-btn-inside {
+    background: $primary !important;
+    color: $white !important;
+    border: none !important;
+    border-radius: 30px !important; // Figma: 30px (very rounded)
+    height: 44px !important; // Figma: 44px
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important; // Figma: 10px
+    width: 100% !important; // Figma: 180px Fill
+    padding: 11px 24px !important; // Figma: 11px top/bottom, 24px left/right
+    box-shadow: none !important;
+
+    &:hover:not(:disabled) {
+      background: darken($primary, 5%) !important;
+      color: $white !important;
+    }
+
+    .anticon {
+      font-size: 18px !important;
+    }
+  }
+}
